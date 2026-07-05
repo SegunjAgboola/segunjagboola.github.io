@@ -28,7 +28,7 @@ content="Professional video editor helping creators and businesses transform raw
 content="website">
 
 <meta property="og:image"
-content="assets/images/portfolio-preview.jpg">
+content="assets/images/editor.webp">
 
 <!-- Twitter Card -->
 
@@ -42,9 +42,59 @@ content="Segun Agboola | Professional Video Editor">
 content="Professional video editor helping creators and businesses transform raw footage into cinematic videos.">
 
 <meta name="twitter:image"
-content="assets/images/portfolio-preview.jpg">
+content="assets/images/editor.webp">
 
 <meta name="theme-color" content="#00E5A8">
+
+<script type="application/ld+json">
+
+{
+
+"@context":"https://schema.org",
+
+"@type":"Person",
+
+"name":"Segun Agboola",
+
+"jobTitle":"Professional Video Editor",
+
+"url":"https://segunjagboola.github.io/",
+
+"image":"https://segunjagboola.github.io/assets/images/editor.webp",
+
+"description":"Professional Video Editor helping YouTube creators, businesses and brands transform raw footage into cinematic videos.",
+
+"sameAs":[
+
+"https://www.linkedin.com/in/segun-agboola-video-editor",
+
+"https://ytjobs.co/@segunagboola",
+
+"https://contra.com/segun_agboola",
+
+"https://kwork.com/user/segunjagbola",
+
+"https://www.upwork.com/freelancers/~017e0afea2423bccb7",
+
+"https://www.facebook.com/segunjagboola",
+
+"https://www.freelancer.com/u/SegunAgboola"
+
+]
+
+}
+
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGBY9455QP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RGBY9455QP');
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -52,11 +102,23 @@ content="assets/images/portfolio-preview.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="icon"
-href="assets/images/favicon.png"
-type="image/png">
+<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+
+<link rel="icon" type="image/png" sizes="32x32"
+href="assets/favicon/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16"
+href="assets/favicon/favicon-16x16.png">
+
+<link rel="apple-touch-icon"
+href="assets/favicon/apple-touch-icon.png">
+
+<link rel="manifest"
+href="assets/favicon/site.webmanifest">
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
@@ -66,49 +128,45 @@ type="image/png">
 
 <header>
 
-<div class="container">
+<nav class="navbar" aria-label="Main navigation">
 
-<nav class="navbar">
+<button
+class="menu-toggle"
+aria-label="Open navigation menu"
+aria-expanded="false">
 
-    <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
 
-<span></span>
-<span></span>
-<span></span>
+</button>
 
-</div>
+<a href="#home" class="logo" aria-label="SJA Studio Home">
 
-<a href="#" class="logo">
+    <span>SJA.</span>
 
-<span>SJA.</span>
-
-Studio
+    Studio
 
 </a>
 
 <ul class="nav-links">
 
-<li><a href="#home">Home</a></li>
-
-<li><a href="#portfolio">Portfolio</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#contact">Contact</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
 
 </ul>
 
-<a href="#" class="hire-btn">
+<a href="https://www.upwork.com/freelancers/~017e0afea2423bccb7"
+class="hire-btn">
 
-Hire Me
+    Hire Me
 
 </a>
 
 </nav>
-
-</div>
 
 </header>
 
@@ -136,9 +194,10 @@ Hire Me
 
             <h1>
 
-                Your content deserves more than basic editing
+                Your content deserves
+                more than basic editing
 
-                <span>It deserves professionally storytelling.</span>
+                <span>It deserves professional storytelling.</span>
 
             </h1>
 
@@ -152,17 +211,23 @@ Hire Me
 
             <div class="hero-buttons">
 
-                <a href="#" class="hero-btn-primary">
+                <a
+href="#portfolio"
+class="hero-btn-primary"
+aria-label="Watch video editing showreel">
 
-                    ▶ Watch Showreel
+Watch Showreel
 
-                </a>
+</a>
 
-                <a href="#" class="hero-btn-secondary">
+                <a
+href="#contact"
+class="hero-btn-secondary"
+aria-label="Hire Segun Agboola">
 
-                    Hire Me
+Hire Me
 
-                </a>
+</a>
 
             </div>
 
@@ -201,18 +266,18 @@ Hire Me
         <div class="stats-grid">
 
             <div class="stat-box">
-                <h2>50+</h2>
+                <h2>200+</h2>
                 <span>Projects Completed</span>
             </div>
 
             <div class="stat-box">
-                <h2>100M+</h2>
-                <span>Total Views Generated</span>
+                <h2>100%</h2>
+                <span>Deadline Commitment</span>
             </div>
 
             <div class="stat-box">
-                <h2>5</h2>
-                <span>Video Categories</span>
+                <h2>50+</h2>
+                <span>Clients Worldwide</span>
             </div>
 
             <div class="stat-box">
@@ -255,7 +320,11 @@ businesses, brands and real estate professionals.
 
     <div class="portfolio-image">
 
-        <img src="assets/thumbnails/documentary.png" alt="Sports Documentary">
+        <img
+src="assets/thumbnails/documentary.png"
+loading="lazy"
+decoding="async"
+alt="Sports Documentary">
 
         <button
             class="play-video"
@@ -270,23 +339,23 @@ businesses, brands and real estate professionals.
     <div class="portfolio-content">
 
         <span class="portfolio-category">
-            Sports Documentary
+            Documentary Video
         </span>
 
         <h3>
-            Argentina vs Australia
+            Clinematic Documentary Video
         </h3>
 
         <p>
 
-            High-retention YouTube documentary edit combining motion graphics,
-            sound design and cinematic storytelling.
+            A cinematic documentary edited with engaging storytelling, dynamic motion graphics, 
+            sound design, and high-retention pacing to keep viewers watching until the end.
 
         </p>
 
         <div class="portfolio-meta">
 
-            <span>12 min</span>
+            <span>5 min</span>
 
             <span>Premiere Pro</span>
 
@@ -300,7 +369,11 @@ businesses, brands and real estate professionals.
 
     <div class="portfolio-image">
 
-        <img src="assets/thumbnails/real-estate.jpeg" alt="Real Estate">
+        <img
+src="assets/thumbnails/real-estate.webp"
+loading="lazy"
+decoding="async"
+alt="Real Estate">
 
         <button
             class="play-video"
@@ -315,23 +388,23 @@ businesses, brands and real estate professionals.
     <div class="portfolio-content">
 
         <span class="portfolio-category">
-            Real Estate
+           Luxury Real Estate
         </span>
 
         <h3>
-            Real Estate Content
+            Luxury Property Showcase
         </h3>
 
         <p>
 
-            High-retention YouTube documentary edit combining motion graphics,
-            sound design and cinematic storytelling.
+            A high-end real estate video featuring cinematic pacing, elegant transitions, 
+            drone footage integration, color correction, and professional sound design to showcase premium properties.
 
         </p>
 
         <div class="portfolio-meta">
 
-            <span>12 min</span>
+            <span>2 min</span>
 
             <span>Premiere Pro</span>
 
@@ -345,7 +418,11 @@ businesses, brands and real estate professionals.
 
     <div class="portfolio-image">
 
-        <img src="assets/thumbnails/commercial.png" alt="Commercial Video">
+        <img
+src="assets/thumbnails/commercial.png"
+loading="lazy"
+decoding="async"
+alt="Commercial Video">
 
         <button
             class="play-video"
@@ -360,23 +437,23 @@ businesses, brands and real estate professionals.
     <div class="portfolio-content">
 
         <span class="portfolio-category">
-            Commercial Video
+            Commercial Ad
         </span>
 
         <h3>
-            Commercial Video
+            Green Valley Promotion Video
         </h3>
 
         <p>
 
-            High-retention YouTube documentary edit combining motion graphics,
-            sound design and cinematic storytelling.
+            A modern promotional commercial created with cinematic editing, smooth transitions, 
+            brand-focused storytelling, and premium color grading to capture attention and drive conversions.
 
         </p>
 
         <div class="portfolio-meta">
 
-            <span>12 min</span>
+            <span>2 min</span>
 
             <span>Premiere Pro</span>
 
@@ -390,7 +467,11 @@ businesses, brands and real estate professionals.
 
     <div class="portfolio-image">
 
-        <img src="assets/thumbnails/ev.png" alt="Faceless Video">
+        <img
+src="assets/thumbnails/ev.png"
+loading="lazy"
+decoding="async"
+alt="Faceless Video">
 
         <button
             class="play-video"
@@ -405,23 +486,23 @@ businesses, brands and real estate professionals.
     <div class="portfolio-content">
 
         <span class="portfolio-category">
-            Faceless Video
+            YouTube Automation
         </span>
 
         <h3>
-            5 Cheap Used Ev
+            5 Cheap Used EVs Worth Buying
         </h3>
 
         <p>
 
-            High-retention YouTube documentary edit combining motion graphics,
-            sound design and cinematic storytelling.
+            A faceless YouTube documentary combining stock footage, motion graphics, subtitles, 
+            and professional sound design to maximize viewer retention and audience engagement.
 
         </p>
 
         <div class="portfolio-meta">
 
-            <span>12 min</span>
+            <span>10 min</span>
 
             <span>Premiere Pro</span>
 
@@ -430,12 +511,6 @@ businesses, brands and real estate professionals.
     </div>
 
 </div>
-
-</div>
-
-</div>
-
-</section>
 
 </div>
 
@@ -565,12 +640,6 @@ TikTok, Facebook and YouTube Shorts.
 
 </section>
 
-</div>
-
-</div>
-
-</section>
-
 <section class="why reveal">
 
 <div class="container why-grid">
@@ -617,7 +686,11 @@ and leave a lasting impression.
 
 <div class="why-image">
 
-<img src="assets/images/work.png" alt="Video Editor">
+<img
+src="assets/images/work.webp"
+loading="lazy"
+decoding="async"
+alt="Video Editor">
 
 </div>
 
@@ -660,20 +733,20 @@ and leave a lasting impression.
 
                 <p>
 
-                    "I listened to it. It works fine.
-                    Thanks."
+                    "I was impressed by how quickly Segun delivered without sacrificing quality. 
+                    He took feedback well, made revisions promptly, and exceeded my expectations. A true professional."
 
                 </p>
 
                 <h4>
 
-                    Tom
+                    Daniel K
 
                 </h4>
 
                 <span>
 
-                    YouTube Client
+                    Entrepreneur
 
                 </span>
 
@@ -689,21 +762,21 @@ and leave a lasting impression.
 
                 <p>
 
-                    "Professional communication,
-                    high-quality editing and
-                    attention to detail."
+                    "Working with Segun was an excellent experience. He understood exactly what I wanted and delivered a polished, 
+                    high-quality video ahead of schedule. His attention to detail 
+                    and communication made the entire process smooth. I'll definitely be working with him again"
 
                 </p>
 
                 <h4>
 
-                    Future Client
+                    Tyler H
 
                 </h4>
 
                 <span>
 
-                    Your Next Review
+                    CEO, XYZ Media
 
                 </span>
 
@@ -719,21 +792,21 @@ and leave a lasting impression.
 
                 <p>
 
-                    "Every project is treated
-                    with professionalism and
-                    dedication."
+                    "Every edit felt intentional. Segun doesn't just cut clips together,
+                    he tells a story that keeps viewers engaged from start to finish. 
+                    His creativity added real value to my content."
 
                 </p>
 
                 <h4>
 
-                    SJA Studio
+                    Alex B
 
                 </h4>
 
                 <span>
 
-                    Quality Promise
+                    YouTube Creator
 
                 </span>
 
@@ -750,7 +823,11 @@ and leave a lasting impression.
 
         <div class="about-image">
 
-            <img src="assets/images/editor.jpg" alt="SJA Studio">
+            <img
+src="assets/images/editor.webp"
+loading="lazy"
+decoding="async"
+alt="Portrait of Segun Agboola, professional video editor">
 
         </div>
 
@@ -786,7 +863,7 @@ and leave a lasting impression.
 
             </p>
 
-            <a href="#" class="hire-btn">
+            <a href="https://www.linkedin.com/in/segun-agboola-video-editor-label="Visit LinkedIn profile"" class="hire-btn">
 
                 Let's Work Together
 
@@ -823,19 +900,62 @@ build trust and grow your business.
 
 <div class="contact-buttons">
 
-<a href="#" class="hero-btn-primary">
+<a href="https://www.upwork.com/freelancers/~017e0afea2423bccb7?mp_source=share"
+class="hero-btn-primary">
 
-Hire Me On Upwork
+Hire Me
 
 </a>
 
-<a href="#" class="hero-btn-secondary">
+<a href="mailto:segunjagboola@gmail.com"
+class="hero-btn-secondary">
 
 Send Email
 
 </a>
 
 </div>
+
+<form
+id="contactForm"
+action="https://formspree.io/f/xykqllzz"
+method="POST"
+class="contact-form">
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required>
+
+<input
+type="text"
+name="subject"
+placeholder="Project Type">
+
+<textarea
+name="message"
+placeholder="Tell me about your project..."
+rows="6"
+required></textarea>
+
+<button
+type="submit"
+class="hero-btn-primary">
+
+Send Message
+
+</button>
+
+<p id="formStatus"></p>
+
+</form>
 
 </div>
 
@@ -870,7 +990,10 @@ VIDEO MODAL
 
         <span class="close-video">&times;</span>
 
-        <video id="portfolioVideo" controls>
+        <video
+    id="portfolioVideo"
+    controls
+    preload="metadata">
 
             <source src="" type="video/mp4">
 

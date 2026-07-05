@@ -1,0 +1,332 @@
+// Progress Bar
+
+const progressBar = document.querySelector(".progress-bar");
+
+window.addEventListener("scroll", () => {
+
+const totalHeight =
+document.documentElement.scrollHeight - window.innerHeight;
+
+const progress =
+(window.scrollY / totalHeight) * 100;
+
+progressBar.style.width = progress + "%";
+
+});
+
+// Reveal Animation
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", reveal);
+
+function reveal(){
+
+reveals.forEach(section=>{
+
+const top=section.getBoundingClientRect().top;
+
+const visible=window.innerHeight-120;
+
+if(top<visible){
+
+section.classList.add("active");
+
+}
+
+});
+
+}
+
+reveal();
+
+/*=========================
+COUNTERS
+=========================*/
+
+const counters=document.querySelectorAll(".counter");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const counter=entry.target;
+
+const target=+counter.dataset.target;
+
+let count=0;
+
+const speed=25;
+
+const update=()=>{
+
+if(count<target){
+
+count++;
+
+counter.innerText=count;
+
+setTimeout(update,speed);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+}
+
+update();
+
+observer.unobserve(counter);
+
+}
+
+});
+
+});
+
+counters.forEach(counter=>observer.observe(counter));
+
+/*=========================
+MOBILE MENU
+=========================*/
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    const expanded =
+        navLinks.classList.contains("active");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        expanded
+    );
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+/*=========================
+ESC CLOSE MOBILE MENU
+=========================*/
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded","false");
+
+    }
+
+});
+
+/*=========================
+PREMIUM VIDEO POPUP
+=========================*/
+
+let lastFocusedButton = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const modal = document.querySelector(".video-modal");
+    const video = document.getElementById("portfolioVideo");
+
+    if(!modal || !video) return;
+
+    const source = video.querySelector("source");
+    const title = document.getElementById("videoTitle");
+    const description = document.getElementById("videoDescription");
+
+    const playButtons = document.querySelectorAll(".play-video");
+    const closeVideo = document.querySelector(".close-video");
+
+    function closeModal(){
+
+        modal.classList.remove("active");
+
+        video.pause();
+        video.currentTime = 0;
+
+        if(lastFocusedButton){
+            lastFocusedButton.focus();
+        }
+
+    }
+
+    playButtons.forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+            lastFocusedButton = button;
+
+            source.src = button.dataset.video;
+
+            video.load();
+            video.play();
+
+            const card = button.closest(".portfolio-card");
+
+            title.textContent =
+                card.querySelector("h3").textContent;
+
+            description.textContent =
+                card.querySelector("p").textContent;
+
+            modal.classList.add("active");
+
+            video.focus();
+
+        });
+
+    });
+
+    closeVideo.addEventListener("click", closeModal);
+
+    modal.addEventListener("click",(e)=>{
+
+        if(e.target === modal){
+
+            closeModal();
+
+        }
+
+    });
+
+    document.addEventListener("keydown",(e)=>{
+
+        if(e.key === "Escape" && modal.classList.contains("active")){
+
+            closeModal();
+
+        }
+
+    });
+
+});
+
+/*=========================
+ACTIVE NAVIGATION
+=========================*/
+
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if(window.scrollY >= sectionTop &&
+           window.scrollY < sectionTop + sectionHeight){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/*=========================
+CONTACT FORM
+=========================*/
+
+const contactForm = document.getElementById("contactForm");
+
+if(contactForm){
+
+const status = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const submitBtn = contactForm.querySelector("button");
+
+submitBtn.disabled = true;
+
+submitBtn.textContent = "Sending...";
+
+const data = new FormData(contactForm);
+
+try{
+
+const response = await fetch(contactForm.action,{
+
+method:"POST",
+
+body:data,
+
+headers:{
+Accept:"application/json"
+}
+
+});
+
+if(response.ok){
+
+status.textContent =
+"✅ Your message has been sent successfully!";
+
+status.className = "success";
+
+contactForm.reset();
+
+}else{
+
+status.textContent =
+"❌ Something went wrong. Please try again.";
+
+status.className = "error";
+
+}
+
+}catch(error){
+
+status.textContent =
+"❌ Network error. Please try again.";
+
+status.className = "error";
+
+}
+
+submitBtn.disabled = false;
+
+submitBtn.textContent = "Send Message";
+
+});
+
+}
